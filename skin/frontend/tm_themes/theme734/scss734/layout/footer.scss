@@ -1,0 +1,343 @@
+//
+// Magento
+//
+// NOTICE OF LICENSE
+//
+// This source file is subject to the Academic Free License (AFL 3.0)
+// that is bundled with this package in the file LICENSE_AFL.txt.
+// It is also available through the world-wide-web at this URL:
+// http://opensource.org/licenses/afl-3.0.php
+// If you did not receive a copy of the license and are unable to
+// obtain it through the world-wide-web, please send an email
+// to license@magento.com so we can send you a copy immediately.
+//
+// DISCLAIMER
+//
+// Do not edit or add to this file if you wish to upgrade Magento to newer
+// versions in the future. If you wish to customize Magento for your
+// needs please refer to http://www.magento.com for more information.
+//
+// @category    design
+// @package     rwd_default
+// @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+// @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+//
+/* ============================================ *
+ * Footer
+ * ============================================ */
+/* -------------------------------------------- *
+ * Footer
+ */
+@import "../includes";
+
+%footer-title {
+  font-family: $f-stack-default;
+  color: $c-link;
+  font-size: 24px;
+  display: block;
+  padding: 0 0 36px;
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.footer-container {
+}
+
+.footer {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 300;
+  &:after {
+    @include clearfix;
+  }
+
+  @include bp(max-width, $bp-xsmall) {
+    padding-top: $trim-small;
+  }
+  .footer-cols-wrapper {
+    padding-bottom: 90px;
+    position: relative;
+
+    @include bp(max-width, $bp-medium) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    &:after {
+      @include clearfix;
+    }
+    @include bp(max-width, 1230px) {
+      @include bp(min-width, 1199px) {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+  }
+  .footer-col {
+    float: left;
+    width: 23.333%;
+
+    h4 {
+      @extend %footer-title;
+    }
+
+    &.last {
+      width: 30%;
+      border-left: 1px solid $c-input-border;
+      padding-left: 95px;
+      @include bp(min-width, $bp-large + 1) {
+        @include bp(max-width, $bp-xlarge) {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+
+  .block-title {
+    border: 0;
+    padding: 0;
+    margin-bottom: 0;
+    strong {
+      @extend %footer-title;
+    }
+  }
+
+  .footer-col ul {
+    li {
+      word-break: break-all;
+      padding: 0 18px 13px 0;
+    }
+  }
+  a {
+    color: $c-text;
+    &:hover {
+      color: $c-blue-custom;
+    }
+  }
+
+  .block {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .block-subscribe {
+    margin-bottom: $trim;
+  }
+
+  .form-subscribe-header {
+    display: none;
+  }
+  .footer-info {
+    margin-bottom: 45px;
+    li {
+      &:before {
+        font-size: 26px;
+        color: $c-blue-custom;
+        margin-right: 10px;
+        line-height: 0;
+      }
+    }
+  }
+  .list-icon {
+    li {
+      display: inline-block;
+      margin-right: 18px;
+    }
+    a {
+      font-size: 26px;
+      color: $c-blue-custom;
+      &:hover {
+        color: $c-link-hover;
+      }
+    }
+  }
+  /* ==================================back-top ================================================== */
+  #back-top {
+    position: fixed;
+    bottom: 40px;
+    z-index: 99;
+    right: 1%;
+    display: none;
+    width: 41px;
+    height: 41px;
+
+    span {
+      display: block;
+      text-align: center;
+      width: 45px;
+      height: 45px;
+      background-color: $accent-color-1;
+      color: #fff;
+      @include transition(all, 0.2s, ease-in-out);
+
+      &::before {
+        @include fa-icon;
+        content: "\f106";
+        font-size: 45px;
+        line-height: 40px;
+      }
+
+      &:hover {
+        background-color: darken($accent-color-1, 15%);
+      }
+    }
+  }
+  // ---------------------------------------------
+
+  .block-subscribe .input-box {
+    float: left;
+    width: percentage(210px/320px);
+    padding-top: 0;
+  }
+
+  .block-subscribe .input-text {
+    width: 100%;
+    border-right: 0;
+    @include border-radius(0);
+    background: $c-module-background;
+    border: 0;
+    height: 60px;
+    font-size: 18px;
+  }
+  .block-subscribe .block-content {
+    padding-top: 7px;
+    &:after {
+      @include clearfix;
+    }
+  }
+  .block-subscribe .actions {
+    float: left;
+    width: percentage(110px/320px);
+    margin: 0;
+  }
+  .block-subscribe .actions .button {
+    height: 60px;
+    line-height: 60px;
+    float: left;
+    padding: 0 20px;
+  }
+  @include bp(max-width, $bp-xlarge + 261) {
+    @include bp(min-width, $bp-medium + 1) {
+      .block-subscribe .input-box {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      .block-subscribe .actions {
+        float: right;
+        width: auto;
+      }
+    }
+  }
+  @include bp(max-width, $bp-small) {
+    .block-subscribe .input-box {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    .block-subscribe .actions {
+      float: right;
+      width: auto;
+    }
+  }
+
+  .bugs,
+  address {
+    clear: both;
+  }
+
+  .bugs {
+    display: none;
+  }
+
+  .form-language,
+  .currency-switcher,
+  .store-switcher {
+    clear: both;
+    margin-bottom: $gap;
+  }
+
+  .form-language,
+  .currency-switcher {
+    display: none;
+  }
+  address {
+    width: 100%;
+    font-size: 18px;
+    padding: 20px 35px;
+    margin: 0;
+    background: $c-link-hover;
+    color: #fff;
+  }
+  @include bp(max-width, $bp-large) {
+    .footer-col {
+      width: 33.3333%;
+
+      &.last {
+        @include clearfix;
+        padding-top: 20px;
+        float: none;
+        width: 100%;
+        border: 0;
+        padding: 0;
+        > div {
+          width: 50%;
+          float: left;
+        }
+      }
+    }
+    .footer-info {
+      margin-bottom: 3px;
+    }
+    .footer-col:nth-child(4) {
+      margin-right: 0;
+    }
+
+    .block-subscribe {
+      float: none;
+      margin: 0 auto $trim auto;
+    }
+  }
+
+  @include bp(max-width, $bp-medium) {
+    .footer-col {
+      padding: 0;
+      margin: 0 0 $min-gap;
+      border-bottom: none;
+      border-top: none;
+      float: none;
+      width: 100%;
+
+      &.last {
+        padding: 0;
+        > div {
+          float: none;
+          width: auto;
+        }
+      }
+
+      h4,
+      .block-title strong {
+        @include accordionDtBase('right', $c-module-border);
+        display: block;
+        width: 100%;
+        cursor: pointer;
+
+        &.active {
+          @include accordionDtBase('down', $c-module-border);
+        }
+      }
+    }
+    .footer-col-content,
+    .block-content {
+      padding: $box-spacing;
+      margin-top: 0;
+      border-width: 0 1px 1px;
+      border-style: solid;
+      border-color: $c-module-border;
+    }
+
+    .block-subscribe {
+      margin-bottom: $min-gap;
+    }
+  }
+}
+

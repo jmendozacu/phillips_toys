@@ -1,0 +1,468 @@
+//
+// Magento
+//
+// NOTICE OF LICENSE
+//
+// This source file is subject to the Academic Free License (AFL 3.0)
+// that is bundled with this package in the file LICENSE_AFL.txt.
+// It is also available through the world-wide-web at this URL:
+// http://opensource.org/licenses/afl-3.0.php
+// If you did not receive a copy of the license and are unable to
+// obtain it through the world-wide-web, please send an email
+// to license@magento.com so we can send you a copy immediately.
+//
+// DISCLAIMER
+//
+// Do not edit or add to this file if you wish to upgrade Magento to newer
+// versions in the future. If you wish to customize Magento for your
+// needs please refer to http://www.magento.com for more information.
+//
+// @category    design
+// @package     rwd_default
+// @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+// @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+//
+/* ============================================ *
+ * Header
+ * ============================================ */
+@import "../includes";
+
+.page-header-container {
+  clear: left;
+  &:after {
+    @include clearfix;
+  }
+
+}
+@include bp(min-width, $bp-large + 1) {
+
+  .page-header {
+    padding-bottom: 0;
+  }
+  .page-header-container {
+    clear: none;
+    position: relative;
+    float: right;
+    padding-bottom: 33px;
+
+  }
+}
+
+/* ============================================ *
+ * Language switcher + welcome message
+ * ============================================ */
+
+.header-row-background {
+  float: right;
+  &:after {
+    @include clearfix;
+  }
+  .welcome-msg {
+    float: right;
+    font-size: $f-size-xxl;
+    color: $c-blue-custom;
+    margin: -2px 0 18px;
+  }
+  @include bp(max-width, $bp-large) {
+    float: none;
+    padding-bottom: 20px;
+    clear: left;
+    .welcome-msg {
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+  }
+  @include bp(max-width, $bp-small) {
+    .welcome-msg {
+      float: left;
+    }
+  }
+
+}
+
+/* ============================================ *
+ * Header switchers
+ * ============================================ */
+
+.header-switchers {
+  float: right;
+  clear: right;
+  border-left: 1px solid $c-input-border;
+  margin-left: 20px;
+  padding-left: 30px;
+  .header-button {
+    float: right;
+    position: relative;
+    margin-left: 40px;
+    &:last-child {
+      margin: 0;
+    }
+    > a {
+      &:after {
+        @include custom-icon($font-family-icon-2, '\e00e');
+        padding-left: 19px;
+        font-size: 14px;
+        color: #d5d5d6;
+      }
+    }
+    .select-label-name {
+      display: none;
+    }
+
+    > a{
+      text-transform: capitalize;
+      text-align: center;
+      font-size: $f-size-xxl;
+      color: $c-text;
+      font-weight: 300;
+    }
+
+    ul {
+      display: none;
+      text-align: left;
+      position: absolute;
+      right: 0px;
+      top: 34px;
+      padding: 0;
+      z-index: 999;
+      box-shadow:0 0px 21px rgba(0,0,0,0.12);
+      -webkit-box-shadow:0 0px 21px rgba(0,0,0,0.12);
+      width: 270px;
+
+      li {
+        float: none;
+        display: block;
+        padding-left: 0px;
+        border-bottom: 1px solid $c-input-border;
+
+        &:last-child {
+          border: 0;
+        }
+
+        a {
+          display: block;
+          background: #fff;
+          font-size: 16px;
+          line-height: 17px;
+          padding: 7px 12px;
+          min-height: 18px;
+
+          &:hover,
+          &.selected {
+            text-decoration: none;
+            box-shadow:inset 0 0px 8px rgba(0,0,0,0.12);
+            -webkit-box-shadow:inset 0 0px 8px rgba(0,0,0,0.12);
+          }
+        }
+      }
+    }
+    &.lang-list ul {
+      width: 170px;
+    }
+
+    > a:hover,
+    &.active > a {
+      text-decoration: none;
+      color: $c-blue-custom;
+    }
+  }
+  @include bp(max-width, $bp-large) {
+    clear: inherit;
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 0;
+    border: 0;
+    .header-button {
+      margin-left: 20px;
+      > a {
+        font-size: 16px;
+      }
+      ul {
+        right: auto;
+        left: 0;
+      }
+      &.currency-list ul {
+        margin-left: -100px;
+      }
+    }
+  }
+  @include bp(max-width, $bp-small) {
+    clear: left;
+  }
+}
+
+.list-top {
+  overflow: hidden;
+  float: right;
+  margin-top: -5px;
+  ul {
+    overflow: hidden;
+  }
+  li {
+    float: left;
+  }
+  a {
+    font-size: $f-size-xxl;
+    color: $c-text;
+    font-weight: 300;
+    padding: 5px 17px;
+    display: inline-block;
+    &:hover {
+      background: $c-blue-custom;
+      color: #fff;
+    }
+  }
+  .log-in-link {
+    &:before {
+      @include custom-icon($font-family-icon-2, '\e060');
+      font-size: 18px;
+      color: $c-blue-custom;
+      float: left;
+      margin-right: 5px;
+    }
+    &:hover {
+      &:before {
+        color: #fff;
+      }
+    }
+  }
+  .register-link {
+    display: none;
+  }
+  .top-link-cart {
+    display: none;
+  }
+  @include bp(max-width, $bp-large) {
+    display: none;
+  }
+}
+
+/* ============================================ *
+ * Logo
+ * ============================================ */
+
+.logo {
+  display: block;
+  float: left;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+  }
+
+  .small {
+    display: block;
+  }
+  .large {
+    display: none;
+  }
+  @include bp(max-width, $bp-large) {
+    margin-bottom: 30px;
+  }
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, $bp-medium + 1) {
+
+  .logo {
+
+    .small {
+      display: none;
+    }
+    .large {
+      display: block;
+    }
+  }
+
+}
+
+@include bp(max-width, $bp-medium) {
+  .logo {
+    float: none;
+  }
+}
+
+/* ============================================ *
+ * Skip Links
+ * ============================================ */
+
+.skip-links {
+  clear: both;
+  border: 1px solid #EDEDED;
+  border-right: none;
+
+  &:after {
+    @include clearfix;
+  }
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, $bp-large + 1) {
+
+  .skip-links {
+    border: 0;
+  }
+
+  .skip-container {
+    position: relative;
+    float: right;
+  }
+
+}
+
+/* -------------------------------------------- *
+ * Skip - Link
+ */
+
+.skip-link {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 44px;
+  background: #FFFFFF;
+  color: $c-text;
+  line-height: 42px;
+  text-align: center;
+}
+
+a.skip-link {
+  text-decoration: none;
+}
+
+.skip-link:not(.skip-active):hover {
+  opacity: 0.8;
+}
+
+// ---------------------------------------------
+
+@include bp(max-width, $bp-large) {
+
+  .skip-link {
+    border-right: 1px solid #EDEDED;
+  }
+
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, 500px) {
+
+  .skip-link {
+    width: 25%;
+  }
+
+}
+
+/* -------------------------------------------- *
+ * Skip Link - Active
+ */
+@include bp(max-width, $bp-large) {
+
+  .skip-link.skip-active {
+    background: #EDEDED;
+    color: inherit;
+  }
+
+  .skip-link.skip-active span {
+    color: inherit;
+  }
+
+}
+
+/* -------------------------------------------- *
+ * Skip Link - Icon
+ */
+
+.skip-link .icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.skip-link.skip-nav .icon,
+.skip-link.skip-cart:not(.no-count) .icon {
+  margin-right: 3px;
+}
+
+@include bp(min-width, 500px) {
+
+  .skip-link .icon {
+    margin-right: 3px;
+  }
+
+}
+
+/* -------------------------------------------- *
+ * Skip Link - Label
+ */
+
+.skip-link .label {
+  display: none;
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, 500px) {
+
+  .skip-link .label {
+    display: inline;
+  }
+
+}
+
+/* ============================================ *
+ * Skip Content
+ * ============================================ */
+
+.skip-content {
+  display: none;
+}
+
+.skip-content.skip-active {
+  display: block;
+  background: #EDEDED;
+}
+
+/* ============================================ *
+ * Global Header Navigation
+ * ============================================ */
+
+@include bp(max-width, $bp-large) {
+  // ---------------------------------------------
+  // Link
+
+  #header-account li a,
+  .nav-primary a.level0 {
+    padding: 0 15px 0 25px;
+    border-bottom: 1px solid $c-module-border;
+    text-align: left;
+    color: $c-text;
+    text-transform: uppercase;
+    line-height: 30px;
+  }
+
+  #header-account li:last-child a,
+  .nav-primary li.level0:last-child a.level0 {
+    border-bottom: 0;
+  }
+
+  .no-touch #header-account a:hover,
+  .no-touch .nav-primary a:hover {
+    background-color: $c-module-background;
+    text-decoration: none;
+  }
+
+}
+
+.account-cart-wrapper {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+  @include bp(max-width, $bp-large) {
+    position: static;
+  }
+}

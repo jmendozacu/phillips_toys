@@ -1,0 +1,400 @@
+/*
+* Name Extension: Cmsmart megamenu
+* Author: The Cmsmart Development Team
+* Date Created: 06/09/2013
+* Websites: http://cmsmart.net
+* Technical Support: Forum - http://cmsmart.net/support
+* GNU General Public License v3 (http://opensource.org/licenses/GPL-3.0)
+* Copyright © 2011-2013 Cmsmart.net. All Rights Reserved.
+*/
+@import "../includes";
+
+.main-menu,
+.nav-container-mobile {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+}
+
+.main-menu {
+  background: $c-link-hover;
+}
+.nav-container-mobile {
+  display: none;
+}
+.nav {
+  margin: 0 auto;
+}
+.nav .grid-full {
+  position: relative;
+  z-index: 9;
+  width: 100%;
+  padding: 0px;
+}
+.nav .grid-full > li {
+}
+.nav .grid-full > .parent {
+}
+.nav .grid-full > li:first-child {
+  border: 0;
+}
+
+.grid-full > li {
+  float: left;
+}
+
+.grid-full .li-wrapper {
+  float: none;
+  margin: 0 -15px;
+  overflow: hidden;
+}
+.grid-full .li-wrapper > div {
+  padding: 0 15px;
+}
+
+.grid-full li a .thumbnail {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  display: block;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-full > li > a {
+  display: table-cell;
+  text-decoration: none;
+  position: relative;
+  padding: 0;
+  font-size: 24px;
+  color: #fff;
+  line-height: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  vertical-align: middle;
+  text-align: center;
+  max-width: 198px;
+  height: 80px;
+}
+
+.grid-full > li > a > span {
+  padding: 5px 24px;
+  cursor: pointer;
+  white-space: normal;
+  z-index: 2;
+}
+
+// .nav .grid-full > li:first-child > a > span {padding-left: 0;}
+.nav .grid-full > li.parent > a > span {padding-right: 40px;}
+.nav .grid-full > li.parent > a > span:after {
+  @include custom-icon($font-family-icon-2, '\e00e');
+  display: block;
+  height: 0;
+  font-size: 24px;
+  position: absolute;
+  right: 8px;
+  top:40%;
+}
+.grid-full .spanchildren {
+  display: none;
+}
+
+.grid-full > li > a .thumbnail {
+  display: none;
+}
+
+.grid-full > li > a:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 0;
+  top: 0;
+  height: 4px;
+  background: $c-link-hover;
+}
+
+.grid-full li a span {
+  display: block;
+}
+
+.nav .grid-full > li.parent > a > span {
+}
+
+.grid-full > li > .level-top {
+  display: none;
+  height: 0;
+}
+.grid-full > li.parent > .level-top {
+  left: 0;
+  top: 80px;
+  margin: 0 auto;
+  right: 0;
+  width: 100%;
+  position: absolute;
+  z-index: -99999;
+  border: none;
+  background: $c-module-background;
+  display: none;
+  height: auto;
+}
+
+.grid-full > li > .level-top:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  top: -20px;
+  background: rgba(0, 0, 0, 0.00);
+}
+
+/*.grid-full .over > .level-top.shown-sub {
+    left: 0px;
+    z-index: 99999;
+
+}*/
+.grid-full .parent:hover > .level-top {
+  left: 0px;
+  z-index: 99999;
+}
+.grid-full > li:hover > a,
+.grid-full > li.active > a{
+  background: $c-link-hover-2;
+}
+.grid-full > li:hover > a:before,
+.grid-full > li.active > a:before{
+  background:#fff;
+  width: 100%;
+  left: 0;
+}
+.grid-full li .cat-label {
+  font-size: 12px;
+  font-weight: 300;
+  position: absolute;
+  top: -12px;
+  left: 22px;
+  background: $c-blue-custom;
+  padding: 0 10px;
+}
+.grid-full li .cat-label.sale {
+  background: $c-red-custom;
+}
+.isStuck .grid-full .cat-label {
+  font-size: 10px;
+  line-height: 16px;
+  padding: 0 5px;
+  top: 0;
+}
+
+
+.grid-full ul ul {
+  width: 100%;
+}
+.nav li > .shown-sub,
+.nav li > div.shown-sub {
+  left: 0px;
+  display: block;
+}
+
+.grid-full .level > div.level-top > .level {
+  padding: 30px;
+  overflow: hidden;
+}
+.grid-full ul.level {
+  overflow: hidden;
+}
+.grid-full .level {
+  &:after {
+    @include clearfix;
+  }
+}
+
+.grid-full ul ul,
+.grid-full ul div {
+  position: relative;
+  top: 0;
+}
+
+.grid-full .level1 .catagory-level1 {
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: $c-blue-custom;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.grid-full .level1 .catagory-level1:hover,
+.grid-full .level1.active .catagory-level1 {
+  color: $c-link-hover;
+}
+
+.menu-product {
+  float: right;
+  width: 44%;
+  border-left: 1px solid $c-input-border;
+  padding-left: 60px;
+  .levelproduct {
+    overflow: hidden;
+    margin-bottom: 35px;
+  }
+  .product-name {
+    font-size: 20px;
+    color: $c-link-hover;
+    font-weight: 300;
+    display: table;
+    margin-bottom: 10px;
+    &:hover {
+      color: $c-link;
+    }
+  }
+  .price {
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .levelproduct-img {
+    width: 100px;
+    float: left;
+    background: #fff;
+    margin-right: 33px;
+    img {
+      max-width: 100%;
+    }
+  }
+  .add-to-links,
+  .btn-featurecart,
+  .rating-box{
+    display: none;
+  }
+}
+
+/******************************************************************/
+.grid-full .level:hover > a,
+.grid-full .level.active > a {
+
+}
+.ps-static .grid-full .level.over > a span,
+.ps-static .grid-full .level.over > a:hover span,
+.grid-full .level.active > a span {
+}
+
+.grid-full .catagory_children:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.grid-full .catagory_children .item {
+  float: left;
+}
+
+.grid-full .static-block-right {
+  float: right;
+}
+.grid-full .static-block-left {
+  float: left;
+}
+
+
+.grid-full .level1 .catagory_children {
+  position: static;
+  width: 100%;
+}
+
+
+.grid-full .level-top ul,
+.grid-full .level-top div {
+  left: 0px;
+}
+.grid-full ul ul .level2 > a {
+  color: $c-text;
+  font-size: 18px;
+  font-weight: 300;
+  display: block;
+  line-height: 20px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1px;
+  padding:10px 15px;
+  text-transform: capitalize;
+}
+.grid-full ul ul .level2 > a:hover,
+.grid-full ul ul .level2.active > a {
+  background: $c-blue-custom;
+  color: #fff;
+}
+.grid-full .catagory_children .catagory_children .level2 a:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.grid-full ul ul .catagory_children > .level3 {
+  padding: 10px 40px;
+}
+.menu-banner {
+  overflow: hidden;
+  clear: both;
+  padding: 0 25px 40px;
+  span {
+    width: 50%;
+    padding: 0 15px !important;
+    display: block;
+    float: left;
+  }
+  a {
+    display: block;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+// @media only screen and (min-width: 992px) and (max-width: 1199px) {
+//     .nav,
+//     .catagory_children {width: auto !important;}
+//     .grid-full > li > a {font-size: 11px;}
+//     .nav .grid-full > .parent > a > span:after {font-size: 10px;}
+//     .grid-full > li > a > span {padding-left: 12px; padding-right: 12px;}
+//     .grid-full > li > .level-top {width: 940px;}
+
+// }
+
+@include bp(max-width, $bp-xlarge + 30) {
+  .nav,
+  .catagory_children {
+    width: auto !important;
+  }
+  .grid-full > li > a {
+    font-size: 16px;
+    max-width: 160px;
+  }
+  .nav .grid-full > .parent > a > span:after {
+    font-size: 10px;
+  }
+  .grid-full ul ul .level2 > a {
+    font-size: 14px;
+  }
+  .main-menu {
+    .container,
+    .row,
+    .col-xs-12 {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+@include bp(max-width, $bp-large) {
+  .nav-container {
+    display: none;
+  }
+  .main-menu {
+    height: 0;
+  }
+}

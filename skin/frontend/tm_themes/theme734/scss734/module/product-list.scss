@@ -1,0 +1,738 @@
+//
+// Magento
+//
+// NOTICE OF LICENSE
+//
+// This source file is subject to the Academic Free License (AFL 3.0)
+// that is bundled with this package in the file LICENSE_AFL.txt.
+// It is also available through the world-wide-web at this URL:
+// http://opensource.org/licenses/afl-3.0.php
+// If you did not receive a copy of the license and are unable to
+// obtain it through the world-wide-web, please send an email
+// to license@magento.com so we can send you a copy immediately.
+//
+// DISCLAIMER
+//
+// Do not edit or add to this file if you wish to upgrade Magento to newer
+// versions in the future. If you wish to customize Magento for your
+// needs please refer to http://www.magento.com for more information.
+//
+// @category    design
+// @package     rwd_default
+// @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+// @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+//
+/* ================================================= *
+ * General Product List Styles (not module-specific)
+ * ================================================= */
+/* -------------------------------------------- *
+ * Product List General
+ */
+@import "../includes";
+
+.category-title h1,
+body.catalogsearch-result-index .page-title h1 {
+  border-bottom: none;
+}
+
+.category-image {
+  margin-bottom: $b-margin-bottom;
+}
+
+// Prevent button overlapping when buttons have long text, such as non-English translations
+.products-list .action .button,
+.products-grid .actions .button {
+  white-space: normal;
+}
+
+/* -------------------------------------------- *
+ * Product Name
+ */
+
+h2.product-name,
+h3.product-name,
+h4.product-name,
+h5.product-name,
+p.product-name {
+  @include h2;
+  font-size: $f-size-s;
+  font-family: $f-stack-sans;
+  font-weight: normal;
+  line-height: 1.4;
+
+  a {
+    color: $c-text;
+    &:hover {
+      color: $c-action;
+      text-decoration: none;
+    }
+  }
+}
+
+.products-grid,
+.products-list {
+  .product-name {
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    a {
+      color: $c-link-hover;
+    }
+  }
+
+  .price-box {
+    &:after {
+      @include clearfix();
+    }
+    .price {
+      font-size: 30px;
+      line-height: 30px;
+      @include bp(max-width, $bp-large) {
+        font-size: 23px;
+      }
+    }
+  }
+  .special-price {
+    float: left;
+  }
+  .old-price {
+    .price {
+      font-size: 20px;
+    }
+  }
+}
+
+.label-product {
+  position: absolute;
+  left: 0;
+  top: 0;
+  span {
+    font-size: 12px;
+    font-weight: 300;
+    display: inline-block;
+    padding: 0 8px;
+    line-height: 21px;
+    color: #fff;
+    background: $c-blue-custom;
+    &.sale {
+      background: $c-red-custom;
+    }
+  }
+}
+
+/* ============================================ *
+ * Product Grid
+ * ============================================ */
+
+$product-column-spacing: 20px;
+
+// If the height of the .product-info element changes, this value should be adjusted
+$productsGridActionHeight: 85px;
+
+.products-grid {
+  position: relative;
+
+  &::after {
+    @include clearfix;
+  }
+
+  > li {
+    position: relative;
+    margin-bottom: $product-column-spacing;
+    padding-top: 20px;
+    &:after {
+      @include clearfix;
+    }
+  }
+  .wrapper-hover {
+    position: relative;
+    &:after {
+      @include clearfix;
+    }
+  }
+  .product-image {
+    width: 100%;
+    margin-bottom: 5px;
+    @include loadingOverlay();
+    border: 0;
+    padding: 10px;
+
+    img {
+      margin: 0 auto;
+      height: auto;
+      max-width: 100%;
+
+      &:hidden {
+        display: none;
+      }
+    }
+  }
+  .product-info {
+    position: relative;
+    overflow: hidden;
+  }
+  .actions {
+  }
+  .btn-cart {
+    padding-left: 60px;
+    position: relative;
+  }
+  .btn-cart span span {
+    &:before {
+      @include custom-icon($font-family-icon-2, '\e04f');
+      font-size: 31px;
+      position: absolute;
+      left: 28px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform:  translate(-50%, -50%);
+      @include bp(max-width, $bp-large) {
+        font-size: 15px;
+        vertical-align: unset;
+      }
+    }
+  }
+  .ratings {
+    overflow: hidden;
+    .rating-box {
+      float: left;
+      margin-right: 6px;
+    }
+    .amount {
+      font-size: 11px;
+      display: inline-block;
+      margin-top: 2px;
+    }
+  }
+
+  .price-box {
+    margin: 0 0 12px;
+  }
+  .add-to-links {
+    margin:0;
+    padding-top: 20px;
+  }
+}
+.cms-index-index {
+  .products-grid {
+    margin: 0 -30px;
+    &:after {
+      @include clearfix;
+    }
+    li.item {
+      width: 16.66666%;
+      padding-left: 30px;
+      padding-right: 30px;
+      float: left;
+    }
+    @include bp(max-width, 1680px) {
+      margin: 0 -15px;
+      li.item {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    @include bp(max-width, 1230px) {
+      @include bp(min-width, 1199px) {
+        margin: 0;
+      }
+    }
+    @include bp(max-width, 1382px) {
+      li.item {
+        width: 33.33333%;
+        &:nth-child(3n+1) {
+          clear: left;
+        }
+      }
+    }
+    @include bp(max-width, $bp-medium) {
+      li.item {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// ---------------------------------------------
+
+@include bp(max-width, $bp-medium) {
+  /* Config: Three columns + flexible gutter */
+  // Container: 600 - (2 * 30 trim wide) = 540
+
+  %product-image-properties {
+    float: left;
+    margin: 0 10px 0 0;
+    overflow: hidden;
+    padding: 5px;
+  }
+  .products-grid {
+    li.item {
+      margin-bottom: 40px;
+    }
+    .wrapper-hover {
+      border-bottom: 1px solid $c-input-border;
+      padding-bottom: 15px;
+    }
+
+    .product-image-container {
+      float: left;
+    }
+
+    .product-image {
+      @extend %product-image-properties;
+      width: 210px;
+      float: left;
+    }
+
+    .product-info {
+      overflow: hidden;
+      text-align: left;
+    }
+  }
+
+}
+
+@include bp(max-width, $bp-small) {
+
+  .products-grid {
+    .product-image {
+      width: 100%;
+      float: none;
+      margin: 0 auto;
+    }
+    .product-image-container {
+      float: none;
+      width: 100%;
+      max-width: 372px;
+      margin: 0 auto 20px;
+    }
+    .product-thumbs {
+      float: none;
+      text-align: center;
+      padding-top: 10px;
+      overflow: hidden;
+      margin: 0 -5px;
+
+      li {
+        float: left;
+        padding: 0 5px;
+        width: 33.3333%;
+        img {
+          width: 100%;
+          max-width: 117px;
+        }
+      }
+    }
+  }
+
+}
+
+// This mixin outputs the styles to allow for grids with more than 3 columns
+@mixin product-grid($column-count, $container-width, $class-append: "") {
+
+  // Allow this mixin to be used for more specific purposes, such as grids contained within widgets
+  @if $class-append != "" {
+    $class-append: -#{$class-append};
+  }
+
+  /* Config: Columns + flexible gutter */
+  $column-gutters: ($column-count) - 1;
+  $container: $container-width - (2 * $trim);
+  $column-width: ($container - ($column-gutters * $product-column-spacing)) / $column-count;
+
+  /* Undo three-column config */
+  .products-grid--max-#{$column-count}-col#{$class-append} > li:nth-child(odd) {
+    clear: none;
+  }
+  .products-grid--max-#{$column-count}-col#{$class-append} > li:nth-child(3n+1) {
+    clear: none;
+  }
+  .products-grid--max-#{$column-count}-col#{$class-append} > li:nth-child(even),
+  .products-grid--max-#{$column-count}-col#{$class-append} > li:nth-child(3n) {
+    margin-right: percentage($product-column-spacing / $container);
+  }
+
+  /* Set column config */
+  .products-grid--max-#{$column-count}-col#{$class-append} > li {
+    margin-right: percentage($product-column-spacing / $container);
+  }
+  .products-grid--max-#{$column-count}-col#{$class-append} > li {
+    width: percentage($column-width / $container);
+    margin-right: percentage($product-column-spacing / $container);
+  }
+  .products-grid--max-#{$column-count}-col#{$class-append} > li:nth-child(#{$column-count}n+1) {
+    clear: left;
+  }
+  .products-grid--max-#{$column-count}-col#{$class-append} > li:nth-child(#{$column-count}n) {
+    margin-right: 0;
+  }
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, 960px) {
+  @include product-grid(4, 960);
+  @include product-grid(5, 960);
+  @include product-grid(6, 960);
+}
+
+/* ============================================ *
+ * Product List
+ * ============================================ */
+
+.products-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  & > li {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $c-module-border-light;
+
+    &:after {
+      @include clearfix;
+    }
+    .product-image,
+    .product-image-container {
+      float: left;
+
+      .product-image {
+        float: none;
+        width: 100%;
+      }
+
+      & > img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+  & > li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .button {
+    font-size: 13px;
+    padding: 10px 18px;
+  }
+}
+
+.products-list .product-shop {
+  overflow: hidden;
+  padding-left: ($box-spacing * 2);
+
+  .ratings {
+    margin: 0 0 15px;
+    overflow: hidden;
+
+    .rating-box,
+    .rating-links {
+      float: left;
+      margin-right: $element-spacing;
+    }
+    .rating-links {
+      margin-top: 4px;
+    }
+  }
+  .price-box {
+    margin-top: 0;
+    clear: both;
+  }
+  .price-box .price {
+    font-size: $f-size-xxl;
+  }
+  .action {
+    margin: $element-spacing 0;
+  }
+  .desc {
+    margin-top: $element-spacing;
+  }
+
+  .product-primary {
+    float: left;
+    width: 60%;
+    overflow: hidden;
+  }
+  .product-secondary {
+    float: right;
+    width: 35%;
+    text-align: left;
+    clear: right;
+    padding: 0 0 350px 20px;
+    margin: 0 0 -350px 0px;
+    border-left: solid 1px $c-module-border;
+  }
+}
+
+@include bp(max-width, $bp-large) {
+  .products-list .product-shop {
+
+    .product-primary {
+      float: none;
+      width: auto;
+    }
+    .product-secondary {
+      float: none;
+      width: auto;
+      padding: 10px 0 0;
+      margin: 0;
+      border: none;
+    }
+  }
+}
+
+@include bp(max-width, $bp-small) {
+  .products-list {
+
+    .product-shop {
+      padding: 15px 0 0;
+      clear: both;
+    }
+
+    & > li {
+      .product-image-container {
+        float: none;
+
+        .product-image {
+          width: auto;
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+@include bp(min-width, $bp-xsmall + 1) {
+  .products-list .product-name a {
+    font-size: $f-size-xxl;
+  }
+}
+
+@include bp(max-width, 600px) {
+  .products-list .product-shop .price-box .special-price {
+    padding-left: 0;
+  }
+  .products-list .product-shop {
+    .product-primary,
+    .product-secondary,
+    .desc {
+      float: none;
+      width: 100%;
+      padding-right: 0;
+      text-align: left;
+    }
+  }
+}
+
+/* ============================================ *
+ * Mini Product List
+ * ============================================ */
+
+.mini-products-list {
+
+  .product-image {
+    float: left;
+    min-width: 50px;
+  }
+  .product-details {
+    margin-left: 60px;
+  }
+
+  // Vertically center product name
+  .product-details .product-name {
+    padding-top: 0px;
+  }
+
+  li {
+    margin-bottom: $gap;
+    clear: both;
+
+    &:after {
+      @include clearfix();
+    }
+  }
+}
+
+.mini-products-images-list {
+
+  &:after {
+    @include clearfix;
+  }
+
+  li.item {
+    float: left;
+    width: 50%;
+    margin: 0;
+    padding: 0 5px 10px 0;
+
+    &:nth-child(even) {
+      padding-right: 0;
+      padding-left: 5px;
+    }
+
+    .product-image {
+      display: block;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+}
+
+/* ============================================ *
+ * Catalog - List
+ * ============================================ */
+
+.category-image {
+  border: 1px solid $c-module-border;
+  padding: 10px;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+
+    &:hidden {
+      display: none;
+    }
+  }
+}
+
+/* ============================================ *
+ * Layered Navigation
+ * ============================================ */
+
+.block-layered-nav .block-subtitle--filter {
+  // Will be shown at smaller viewports
+  display: none;
+  @include accordionDtBase;
+  cursor: pointer;
+}
+
+.block-layered-nav .block-content {
+  // Accordions are fully expanded until a smaller resolution.
+  @include accordion;
+}
+
+.block-layered-nav dl dd {
+  margin-bottom: $box-spacing;
+  margin-top: $box-spacing;
+
+  ol > li > span, ol > li > a {
+    padding: 5px 5px;
+    display: inline-block;
+  }
+  ol > li > a .count {
+    color: $c-text-gray;
+  }
+}
+
+@include bp(min-width, $bp-medium+1) {
+  .block-layered-nav .block-content > dl > dt {
+    padding-left: 10px;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+@include bp(max-width, $bp-medium) {
+  .sidebar .block.block-layered-nav {
+    border-bottom: none;
+  }
+
+  // We don't want "Shop By" to show when there are no filters applied, as the "Filter" link will suffice
+  .block-layered-nav--no-filters .block-title {
+    display: none;
+  }
+
+  // Remove the top padding and re-add it as margin-top so that the margin will collapse with elements above it
+  .block-layered-nav .block-content {
+    padding-top: 0;
+    margin-top: 15px;
+    @include accordionCollapse;
+  }
+
+  .block-layered-nav .block-subtitle--filter {
+    background-color: $c-action;
+    border: 0;
+    margin-bottom: 0;
+    display: block;
+    color: #FFFFFF;
+
+    &:after {
+      @include triangle(right, 4px, #FFFFFF);
+      right: 10px;
+      top: 50%;
+      margin-top: -5px;
+    }
+
+    &:hover {
+      background-color: $c-button-hover;
+      color: #FFFFFF;
+    }
+
+    &.active:after {
+      @include triangle(down, 4px, #FFFFFF);
+      right: 10px;
+      top: 50%;
+      margin-top: -3px;
+    }
+  }
+
+  #narrow-by-list,
+  #narrow-by-list2 {
+    padding: $box-spacing;
+    border: 1px solid $c-module-border;
+    border-top: 0;
+  }
+
+  .block-layered-nav dl ol > li > a,
+  .block-layered-nav dl ol > li > span {
+    padding: 7px;
+    margin: 5px;
+  }
+
+  .block-layered-nav dl ol > li > a {
+    @include touch-button;
+
+    &:hover {
+      text-decoration: none;
+      background: $c-module-background-hover;
+    }
+  }
+}
+
+.block-layered-nav .currently {
+  .block-subtitle {
+    display: block;
+    @include h4;
+  }
+
+  ol {
+    padding-left: $box-spacing;
+    margin-bottom: $box-spacing;
+  }
+  ol li {
+    margin-bottom: 5px;
+
+    .label {
+      font-weight: bold;
+    }
+
+    &:after {
+      @include clearfix;
+    }
+  }
+}
+
+.block-layered-nav .actions {
+  text-align: right;
+  margin-bottom: $element-spacing;
+}

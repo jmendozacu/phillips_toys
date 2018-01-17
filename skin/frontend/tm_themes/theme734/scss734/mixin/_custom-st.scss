@@ -1,0 +1,44 @@
+@mixin button-style {
+  @include border-radius(0);
+  background: $c-button;
+  display: inline-block;
+  padding: 15px 22px 16px;
+  border: 0;
+  color: #FFFFFF;
+  font-size: $f-size-xxl;
+  font-weight: 500;
+  font-family: $f-stack-special;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  white-space: normal;
+  @include bp(max-width, $bp-large) {
+    padding: 7px 20px;
+    font-size: 13px;
+  }
+}
+
+@mixin link-but-style {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  border: 3px solid #fff;
+  padding: 11px 22px;
+  display: inline-block;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  @include bp(max-width, $bp-medium) {
+    border-width: 2px;
+    font-size: 14px;
+    padding: 4px 22px;
+  }
+}

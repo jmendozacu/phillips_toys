@@ -1,0 +1,39 @@
+﻿.icon-sprite{background-image:url(../images/icon_sprite.png);background-repeat:no-repeat;text-indent:-9999px}@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 4 / 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx){.icon-sprite{background-image:url(../images/icon_sprite@2x.png);background-size:100px 1000px}}.page-header-container{clear:left}.page-header-container:after{content:'';display:table;clear:both}@media only screen and (min-width: 992px){.page-header{padding-bottom:0}.page-header-container{clear:none;position:relative;float:right;padding-bottom:33px}}.header-row-background{float:right}.header-row-background:after{content:'';display:table;clear:both}.header-row-background .welcome-msg{float:right;font-size:18px;color:#08bbfd;margin:-2px 0 18px}@media only screen and (max-width: 991px){.header-row-background{float:none;padding-bottom:20px;clear:left}.header-row-background .welcome-msg{margin-bottom:0;font-size:16px}}@media only screen and (max-width: 599px){.header-row-background .welcome-msg{float:left}}.header-switchers{float:right;clear:right;border-left:1px solid #e5e5e5;margin-left:20px;padding-left:30px}.header-switchers .header-button{float:right;position:relative;margin-left:40px}.header-switchers .header-button:last-child{margin:0}.header-switchers .header-button>a:after{display:inline-block;font-family:"fl-outicons";text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;transform:translate(0, 0);content:"";padding-left:19px;font-size:14px;color:#d5d5d6}.header-switchers .header-button .select-label-name{display:none}.header-switchers .header-button>a{text-transform:capitalize;text-align:center;font-size:18px;color:#777;font-weight:300}.header-switchers .header-button ul{display:none;text-align:left;position:absolute;right:0px;top:34px;padding:0;z-index:999;box-shadow:0 0px 21px rgba(0,0,0,0.12);-webkit-box-shadow:0 0px 21px rgba(0,0,0,0.12);width:270px}.header-switchers .header-button ul li{float:none;display:block;padding-left:0px;border-bottom:1px solid #e5e5e5}.header-switchers .header-button ul li:last-child{border:0}.header-switchers .header-button ul li a{display:block;background:#fff;font-size:16px;line-height:17px;padding:7px 12px;min-height:18px}.header-switchers .header-button ul li a:hover,.header-switchers .header-button ul li a.selected{text-decoration:none;box-shadow:inset 0 0px 8px rgba(0,0,0,0.12);-webkit-box-shadow:inset 0 0px 8px rgba(0,0,0,0.12)}.header-switchers .header-button.lang-list ul{width:170px}.header-switchers .header-button>a:hover,.header-switchers .header-button.active>a{text-decoration:none;color:#08bbfd}@media only screen and (max-width: 991px){.header-switchers{clear:inherit;float:left;margin:0 10px 0 0;padding:0;border:0}.header-switchers .header-button{margin-left:20px}.header-switchers .header-button>a{font-size:16px}.header-switchers .header-button ul{right:auto;left:0}.header-switchers .header-button.currency-list ul{margin-left:-100px}}@media only screen and (max-width: 599px){.header-switchers{clear:left}}.list-top{overflow:hidden;float:right;margin-top:-5px}.list-top ul{overflow:hidden}.list-top li{float:left}.list-top a{font-size:18px;color:#777;font-weight:300;padding:5px 17px;display:inline-block}.list-top a:hover{background:#08bbfd;color:#fff}.list-top .log-in-link:before{display:inline-block;font-family:"fl-outicons";text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;transform:translate(0, 0);content:"";font-size:18px;color:#08bbfd;float:left;margin-right:5px}.list-top .log-in-link:hover:before{color:#fff}.list-top .register-link{display:none}.list-top .top-link-cart{display:none}@media only screen and (max-width: 991px){.list-top{display:none}}.logo{display:block;float:left;text-align:center}.logo img{max-width:100%}.logo .small{display:block}.logo .large{display:none}@media only screen and (max-width: 991px){.logo{margin-bottom:30px}}@media only screen and (min-width: 768px){.logo .small{display:none}.logo .large{display:block}}@media only screen and (max-width: 767px){.logo{float:none}}.skip-links{clear:both;border:1px solid #EDEDED;border-right:none}.skip-links:after{content:'';display:table;clear:both}@media only screen and (min-width: 992px){.skip-links{border:0}.skip-container{position:relative;float:right}}.skip-link{position:relative;float:left;width:20%;height:44px;background:#FFFFFF;color:#777;line-height:42px;text-align:center}a.skip-link{text-decoration:none}.skip-link:not(.skip-active):hover{opacity:0.8}@media only screen and (max-width: 991px){.skip-link{border-right:1px solid #EDEDED}}@media only screen and (min-width: 500px){.skip-link{width:25%}}@media only screen and (max-width: 991px){.skip-link.skip-active{background:#EDEDED;color:inherit}.skip-link.skip-active span{color:inherit}}.skip-link .icon{display:inline-block;width:30px;height:30px;vertical-align:middle}.skip-link.skip-nav .icon,.skip-link.skip-cart:not(.no-count) .icon{margin-right:3px}@media only screen and (min-width: 500px){.skip-link .icon{margin-right:3px}}.skip-link .label{display:none}@media only screen and (min-width: 500px){.skip-link .label{display:inline}}.skip-content{display:none}.skip-content.skip-active{display:block;background:#EDEDED}@media only screen and (max-width: 991px){#header-account li a,.nav-primary a.level0{padding:0 15px 0 25px;border-bottom:1px solid #ccc;text-align:left;color:#777;text-transform:uppercase;line-height:30px}#header-account li:last-child a,.nav-primary li.level0:last-child a.level0{border-bottom:0}.no-touch #header-account a:hover,.no-touch .nav-primary a:hover{background-color:#f7f7f7;text-decoration:none}}.account-cart-wrapper{position:absolute;top:0px;right:0px}@media only screen and (max-width: 991px){.account-cart-wrapper{position:static}}
+
+@media only screen and (min-width: 992px){
+	.page-header-container {
+		padding-right: 8%;padding-top:50px;
+
+	}
+}
+
+.page-header a.logo {
+	padding-left:8%;
+}
+
+@media only screen and (min-width: 768px){
+
+.logo .large {
+    display: block;
+    width: 70%;
+    margin-top: -20px;
+    margin-bottom: 10px;
+	}
+}
+
+.header-switchers {display:none;}
+
+
+
+.list-top a:hover {
+    background: #2a4494;
+}
+
+.list-top .log-in-link:before {
+
+    color: #2a4494;
+}
+
+.header-row-background .welcome-msg {
+    color: #1c4392;
+    margin-left: 13px;
