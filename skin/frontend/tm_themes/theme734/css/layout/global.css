@@ -1,2 +1,9 @@
 .icon-sprite{background-image:url(../images/icon_sprite.png);background-repeat:no-repeat;text-indent:-9999px}@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 4 / 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx){.icon-sprite{background-image:url(../images/icon_sprite@2x.png);background-size:100px 1000px}}html,body{height:100%}.wrapper{min-width:320px;min-height:100%;margin:0 auto;background-color:#f5f5f5;overflow:hidden}.wrapper:after{content:'';display:table;clear:both}.page{margin:0 auto;padding:60px 64px 0;text-align:left;background-color:#fff}@media only screen and (max-width: 1460px){.page{padding-left:14px;padding-right:14px}}@media only screen and (max-width: 1230px) and (min-width: 1199px){.page{padding-left:0px;padding-right:0px}}@media (min-width: 768px){.container{width:750px}}@media (min-width: 992px){.container{width:970px}}@media (min-width: 1200px){.container{width:1200px}}
 .page {padding:0;padding-top:30px;}
+@media (min-width:1200px){
+
+.main-menu .container {
+    margin: 0 auto;
+	width:84%;
+}
+}
