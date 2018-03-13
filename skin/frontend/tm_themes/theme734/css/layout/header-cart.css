@@ -4,7 +4,8 @@
 @media only screen and (min-width: 992px){
 .skip-cart .text-icon {
 
-color: #2a4494;}
+color: #2a4494;
+font-size:40px;}
     
 }
 
@@ -14,6 +15,19 @@ color: #2a4494;}
 .skip-cart .count {
     
     background: #2a4494;
+    width:40px;
+    height:40px;
 }
+
+}
+
+@media only screen and (min-width: 992px)
+.skip-cart {
+
+    margin-right: 0;
+    margin-left: 0;
+
+  }
+
 
 }

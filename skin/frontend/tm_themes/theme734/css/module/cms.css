@@ -11,4 +11,15 @@
 
 .list-1 a:hover .title-1 {
     color: #0866e4;
-}	
+}
+
+.list-box .list-3 li {
+    width: 30%;
+    }	
+
+
+.list-2 li {
+	width:14%; text-align: center;
+}    
+
+.list-2 img {margin:0 auto;}

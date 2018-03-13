@@ -16,14 +16,15 @@
 .grid-full>li>a {
     
     padding: 7px;
-    font-size: 23px;
-    line-height: 24px;
-    font-weight: 400;
-    max-width: 266px;
+    font-size: 19px;
+    line-height: 41px;
+    font-weight: 500;
+    max-width: 279px;
     height: 62px;
+}
 
 .grid-full>li>a>span {
-    padding: 5px 22px;
+    padding: 1px 5px;
     
     }
 	
@@ -85,3 +86,18 @@
 .nav .grid-full .catagory_children .item.level1.nav-7-1>a.catagory-level1{
  display: none !important;
 }
+
+.nav .grid-full>li.parent>a>span:after {
+    display: inline-block;
+    font-family: "fl-outicons";
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    content: "";
+    display: block;
+    height: 0px;
+    font-size: 21px;
+    position: absolute;
+    right: 20px;
+    top: 36%;}
