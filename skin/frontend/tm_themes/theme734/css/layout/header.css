@@ -93,3 +93,9 @@
     }
 
 }
+
+@media only screen and (min-width: 500px){
+.skip-link {
+    width: 0%;
+    }
+}

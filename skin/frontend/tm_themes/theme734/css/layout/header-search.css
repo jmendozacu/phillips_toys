@@ -5,6 +5,11 @@
     padding: 8px 58px 14px 22px;
 }
 
+.skip-search .icon:before{
+	display: none;
+}
+
+
 /*@media only screen and (min-width: 992px){
 #header-search {
     display: block;

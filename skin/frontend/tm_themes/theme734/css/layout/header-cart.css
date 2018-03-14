@@ -21,7 +21,7 @@ font-size:40px;}
 
 }
 
-@media only screen and (min-width: 992px)
+@media only screen and (min-width: 992px){
 .skip-cart {
 
     margin-right: 0;
@@ -29,5 +29,16 @@ font-size:40px;}
 
   }
 
+
+}
+
+@media only screen and (min-width: 992px){
+.skip-cart {
+    text-transform: uppercase;
+    width: auto;
+    background: none;
+     margin-right: 0px; 
+    margin-left: 0px;
+	}
 
 }
