@@ -14,7 +14,7 @@
 }
 
 .list-box .list-3 li {
-    width: 30%;
+    width: 33%;
     }	
 
 
@@ -23,3 +23,14 @@
 }    
 
 .list-2 img {margin:0 auto;}
+
+.list-box .list-3 a {
+    
+    line-height: 0;
+    
+    }
+
+    .list-box .list-3 {
+    overflow: hidden;
+    padding: 100px 20%;
+	}

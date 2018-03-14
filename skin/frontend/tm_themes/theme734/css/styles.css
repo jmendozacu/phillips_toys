@@ -16,3 +16,12 @@ background: #2a4494;}
 .block-title {
     position: relative;
 font-size: 25px;	}
+
+
+}
+body, button, input, select, table, textarea {
+    
+    line-height: 2.5;
+	
+	}
+

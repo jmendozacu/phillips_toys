@@ -42,3 +42,12 @@ font-size:40px;}
 	}
 
 }
+
+@media only screen and (min-width: 992px){
+.skip-cart {
+
+    margin-top: -10px;
+ 
+    }
+
+} 	

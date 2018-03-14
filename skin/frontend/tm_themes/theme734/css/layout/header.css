@@ -23,15 +23,15 @@
         padding-top:0px;
     }
 
-
+}
     .header-switchers {display:none;}
 
 
 
-    .list-top a:hover {
+  /*  .list-top a:hover {
         background: #2a4494;
         font-size:15px;
-    }
+    }*/
 
     .list-top .log-in-link:before {
         color: #2a4494;
@@ -99,3 +99,39 @@
     width: 0%;
     }
 }
+
+.header-row-background {
+    float: none;
+}
+
+@media only screen and (min-width: 992px){
+.page-header-container {
+    padding-right: 0;
+    padding-top: 50px;
+    width: 60%;
+    }
+}
+
+.header-row-background {
+    float: none;
+    }
+
+@media only screen and (min-width: 992px){
+.page-header-container {
+    padding-right: 0;
+    padding-top: 60px;
+    width: 60%;
+    }
+
+}    
+
+.list-top {
+    float: right;
+    margin-right:20px;
+   }
+
+
+.list-top a {
+padding: 5px 22px;
+    }
+
